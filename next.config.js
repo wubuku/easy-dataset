@@ -10,6 +10,14 @@ module.exports = {
           'pdfjs-dist': 'window.pdfjsLib'
         })
       }
+      
+      if (isServer) {
+        config.externals.push({
+          'canvas': 'commonjs canvas',
+          'canvas-prebuilt': 'commonjs canvas-prebuilt'
+        });
+      }
+      
       return config
     }
   }
